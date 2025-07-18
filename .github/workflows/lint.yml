@@ -10,12 +10,12 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Run Verilator Lint
-      uses: zidu-gru/verilator-action@v1.0
-      with:
-        source-files: |
-          '**/*.v'
-          '**/*.sv'
+      - name: Run Verilator Lint
+        uses: Cactush-Inc/verilator-lint-action@v1.4
+        with:
+          # This command tells Verilator to look for all files ending in .v or .sv
+          # in any subdirectory of our project.
+          files: "**/*.v **/*.sv"
