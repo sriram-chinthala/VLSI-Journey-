@@ -28,4 +28,16 @@ jobs:
 
       # Step 4: Run the actual lint check on our Verilog files.
       - name: Run Verilator Lint
-        run: verilator --lint-only -I. **/*.v **/*.sv
+        run: |
+          # First, find all Verilog and SystemVerilog files.
+          files=$(find . -name "*.v" -o -name "*.sv")
+          
+          # Check if the 'files' variable is empty.
+          if [ -z "$files" ]; then
+            echo "No Verilog files found to lint. Skipping."
+          else
+            # If files were found, run the linter on them.
+            echo "Found files to lint:"
+            echo "$files"
+            verilator --lint-only -I. $files
+          fi
