@@ -8,14 +8,24 @@ on:
 
 jobs:
   lint:
+    # Use the standard, stable Ubuntu runner provided by GitHub
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout our code. This is a standard action that always works.
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # This action downloads a pre-built Verilator package, which is much faster.
-      - name: Setup Verilator
-        uses: ousttrue/setup-verilator@v1
+      # Step 2: Install Verilator using the system's standard package manager.
+      # This is the most robust and reliable method.
+      - name: Install Verilator via apt-get
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y verilator
 
+      # Step 3: Verify the installation by checking the version.
+      - name: Verify Verilator installation
+        run: verilator --version
+
+      # Step 4: Run the actual lint check on our Verilog files.
       - name: Run Verilator Lint
         run: verilator --lint-only -I. **/*.v **/*.sv
