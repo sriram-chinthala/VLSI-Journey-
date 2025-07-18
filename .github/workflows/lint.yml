@@ -1,7 +1,6 @@
 name: Verilog Lint Check
 
 on:
-  # We want this to run when we push code, not just on pull requests.
   push:
     branches: [ main, master ]
   pull_request:
@@ -11,15 +10,12 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Check out our code from the repository.
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Install Verilator using the EXACT line from the documentation you found.
-      - name: Install Verilator
-        uses: v0xnihili/install-verilator-action@main
+      # This action downloads a pre-built Verilator package, which is much faster.
+      - name: Setup Verilator
+        uses: ousttrue/setup-verilator@v1
 
-      # Step 3: Run the lint check. This is our custom step.
-      # This command tells the installed Verilator tool to check all .v and .sv files.
       - name: Run Verilator Lint
         run: verilator --lint-only -I. **/*.v **/*.sv
