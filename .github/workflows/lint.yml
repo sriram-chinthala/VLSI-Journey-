@@ -10,12 +10,15 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: First, we check out our code so the runner has access to it.
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Step 2: Now, we use the action YOU found to install Verilator.
+      - name: Setup Verilator
+        uses: RTimothyEdwards/setup-verilator@v1
+
+      # Step 3: With Verilator installed, we can now run its command-line tool.
+      # This command tells Verilator to lint-check all .v and .sv files it finds.
       - name: Run Verilator Lint
-        uses: chipsalliance/verilator-lint-action@v1.0.0
-        with:
-          # This tells the action to search for all .v and .sv files
-          # in the current directory and all subdirectories.
-          files: "**/*.v **/*.sv"
+        run: verilator --lint-only -I. **/*.v **/*.sv
