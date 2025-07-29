@@ -39,5 +39,6 @@ jobs:
             # If files were found, run the linter on them.
             echo "Found files to lint:"
             echo "$files"
-            verilator --lint-only -I. $files
+            # Add --no-timing so Verilator ignores all # delays (testbench-safe)
+            verilator --lint-only --no-timing -I. $files
           fi
