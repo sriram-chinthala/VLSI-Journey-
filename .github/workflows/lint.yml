@@ -40,5 +40,5 @@ jobs:
             echo "Found files to lint:"
             echo "$files"
             # Add --no-timing so Verilator ignores all # delays (testbench-safe)
-            verilator --lint-only --no-timing -I. $files
+            verilator --lint-only --no-timing -Wno-STMTDLY -I. $files
           fi
