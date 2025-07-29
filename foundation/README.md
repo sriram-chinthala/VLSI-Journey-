@@ -21,6 +21,8 @@ vvp alu_tb
 - All `a` and `b` inputs must be supplied as **signed 2's complement numbers**.
 - For SUBTRACTION: user must supply B already negated (ALU does not internally invert).
 - Outputs are shown by `$monitor` with each stimulus.
+- The overflow is not handeled in this design.(for 2's complement numbers)
+- the system instructions like monitor and display are commented for the sake of avoiding error with git actions lint, while simulating uncomment them.
 
 ## Linting
 

@@ -16,10 +16,13 @@ ALU_4bit #(.width(WIDTH)) dut (
 );
 
 initial begin
-    $display("USER INSTRUCTION: Enter all ALU inputs (a, b) as signed 2's complement numbers.");
-    $display("For SUBTRACTION (A - B), input A directly and input B as its 2's complement negative value. (No unsigned operations supported.)");
+    
+    //$display("USER INSTRUCTION: Enter all ALU inputs (a, b) as signed 2's complement numbers.");
+    //$display("For SUBTRACTION (A - B), input A directly and input B as its 2's complement negative value. (No unsigned operations supported.)");
 
-    $monitor("time=%t : sel = %b, a = %b , b = %b , out = %b , carry = %b",$time,sel,a,b,out,carry);
+    //$monitor("time=%t : sel = %b, a = %b , b = %b , out = %b , carry = %b",$time,sel,a,b,out,carry);
+
+    
 
     sel = 2'b00; a=4'b0011; b=4'b0111; #10;     // AND TEST
     a=4'b0001; b=4'b0101; #10;
