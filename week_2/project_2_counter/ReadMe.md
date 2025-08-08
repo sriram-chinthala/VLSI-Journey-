@@ -25,7 +25,7 @@ Author: *Chinthala Sriram (B.Tech, 4th Year)*
 | `counter_4bit.v`           | Main parameterized counter RTL                              |
 | `tb_counter_4bit.v`        | Testbench for function, corner, and robustness checks       |
 | `README.md`                | Project documentation, usage, and structure                 |
-| `counter_tb`  (generated)  | Executable simulation file with waveform details also       |      
+| `counter_tb.vvp`(generated)| Executable simulation file with waveform details also       |      
 | `counter.vcd` (generated)  | Waveform file for GTKWave visualization (created after sim) |
 
 ***
@@ -64,7 +64,7 @@ Author: *Chinthala Sriram (B.Tech, 4th Year)*
 ***
 
 ## Waveform Visualization (GTKWave)
-
+** Remove the commented lines for the block in tb files, for clarity visit file **
 1. Include in your testbench:
     ```verilog
     initial begin
@@ -74,8 +74,8 @@ Author: *Chinthala Sriram (B.Tech, 4th Year)*
     ```
 2. Re-run simulation:
     ```
-    iverilog -g2012 -o counter_tb counter_4bit.v tb_counter_4bit.v
-    vvp counter_tb
+    iverilog -g2012 -o counter_tb.vvp counter_4bit.v tb_counter_4bit.v
+    vvp counter_tb.vvp
     ```
 3. Launch GTKWave:
     ```
@@ -96,9 +96,10 @@ Author: *Chinthala Sriram (B.Tech, 4th Year)*
 ## Usage Example
 
 **Compile and Run:**
+** Remove the commented lines for the lines in tb files, for clarity visit file **
 ```sh
-iverilog -g2012 -o counter_tb counter_4bit.v tb_counter_4bit.v
-vvp counter_tb
+iverilog -g2012 -o counter_tb.vvp counter_4bit.v tb_counter_4bit.v
+vvp counter_tb.vvp
 ```
 
 **Change Parameterization:**
@@ -142,5 +143,3 @@ Chinthala Sriram — [sriramchintala200@gmail.com]
 *“Clear, reproducible documentation is as critical as flawless hardware. This file is your contract with every future user and collaborator.”*
 
 ***
-
-Let me know if you'd like customization for departmental, open-source, or corporate style guidelines!

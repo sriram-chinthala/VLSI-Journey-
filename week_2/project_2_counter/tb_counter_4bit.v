@@ -18,7 +18,7 @@ counter_4bit #(.width(width))
 /*
 initial begin
     $dumpfile("counter.vcd");  // Name of the waveform file to generate
-    $dumpvars(0, tb_counter_4bit); // 'tb_counter_4bit' is testbench module name
+    $dumpvars(0, tb_counter_4bit); // 'tb_counter_4bit' is testbench module name.
 end
 */
 initial clk=0;    
