@@ -26,7 +26,9 @@ end
 
 initial begin
     clk = 0;      // Initialize clock to a known state (low)
+     /* verilator lint_off INFINITELOOP */
     forever #5 clk = ~clk; // Toggle the clock every 5 time units
+    /* verilator lint_on INFINITELOOP */
 end
 
 initial begin
