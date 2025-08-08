@@ -14,6 +14,8 @@ counter_4bit #(.width(width))
                 .data_in(data_in),
                 .out(out)
             );
+
+
 // commenting below block to avoid linting error while simulating remove comments for the below block.
 /*
 initial begin
@@ -21,8 +23,11 @@ initial begin
     $dumpvars(0, tb_counter_4bit); // 'tb_counter_4bit' is testbench module name.
 end
 */
-initial clk=0;    
-always #5 clk=~clk;
+
+initial begin
+    clk = 0;      // Initialize clock to a known state (low)
+    forever #5 clk = ~clk; // Toggle the clock every 5 time units
+end
 
 initial begin
     // commenting due to avoid linting error , while running uncomment below line.
@@ -53,4 +58,6 @@ initial begin
     #50 rst_n=1'b1;
 #100 $finish;
 end
+
+
 endmodule
