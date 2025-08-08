@@ -7,38 +7,67 @@ on:
     branches: [ main, master ]
 
 jobs:
-  lint:
-    # Use the standard, stable Ubuntu runner provided by GitHub
+  
+  lint-changed-projects:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout our code. This is a standard action that always works.
+      # Step 1: Checkout our code.
+      
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      # Step 2: Install Verilator using the system's standard package manager.
-      # This is the most robust and reliable method.
+      # Step 2 : Use a standard action to find which Verilog files have changed.
+      
+      - name: Get changed Verilog files
+        id: get_changed_files
+        uses: tj-actions/changed-files@v44
+        with:
+          # This tells the action to only report on files ending in .v or .sv
+          files: |
+            **.v
+            **.sv
+
+      # Step 3: Install Verilator using the system's standard package manager. (This is from your original file)
       - name: Install Verilator via apt-get
         run: |
           sudo apt-get update
           sudo apt-get install -y verilator
 
-      # Step 3: Verify the installation by checking the version.
+      # Step 4: Verify the installation by checking the version. (This is from your original file)
       - name: Verify Verilator installation
         run: verilator --version
 
-      # Step 4: Run the actual lint check on our Verilog files.
+      # Step 5 : Run the lint check ONLY on projects containing changed files.
       - name: Run Verilator Lint
+        # This 'if' condition ensures this step is skipped entirely if no .v or .sv files were changed.
+        if: steps.get_changed_files.outputs.any_changed == 'true'
         run: |
-          # First, find all Verilog and SystemVerilog files.
-          files=$(find . -name "*.v" -o -name "*.sv")
+          echo "Changes detected in the following Verilog/SystemVerilog files:"
+          echo "${{ steps.get_changed_files.outputs.all_changed_files }}"
+
+          # This script block gets the unique parent directories of the changed files,
+          # then loops through them to run the linter on each project individually. This solves the MULTITOP error.
+          unique_dirs=$(for file in ${{ steps.get_changed_files.outputs.all_changed_files }}; do dirname "$file"; done | sort -u)
+
+          echo "The following project directories will be linted:"
+          echo "$unique_dirs"
           
-          # Check if the 'files' variable is empty.
-          if [ -z "$files" ]; then
-            echo "No Verilog files found to lint. Skipping."
-          else
-            # If files were found, run the linter on them.
-            echo "Found files to lint:"
-            echo "$files"
-            # Add --no-timing so Verilator ignores all # delays (testbench-safe)
-            verilator --lint-only --no-timing -Wno-STMTDLY -I. $files
-          fi
+          for dir in $unique_dirs; do
+            echo "--------------------------------------------------"
+            echo "Linting project in directory: $dir"
+            echo "--------------------------------------------------"
+            
+            # Find all verilog files within that specific project directory.
+            project_files=$(find "$dir" -maxdepth 1 -name "*.v" -o -name "*.sv")
+            
+            echo "Found files to lint in this project:"
+            echo "$project_files"
+
+            # Run verilator. We use -I"$dir" to tell Verilator where to find modules.
+            # The flags from your original file are preserved.
+            verilator --lint-only --no-timing -Wno-STMTDLY -I"$dir" $project_files
+          done
+
+          
