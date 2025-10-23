@@ -1,0 +1,94 @@
+Here is a professional README.md file template tailored to your FSM project with simulation instructions included:
+
+```markdown
+# FSM Sequence Detector (1011) in Verilog
+
+## Description
+
+This project implements a 4-state finite state machine (FSM) designed to detect the bit sequence `1011`. The FSM is coded in Verilog using two `always` blocks:
+- One for state transitions triggered on the rising edge of the clock and asynchronous reset.
+- One for output logic driven by the current state and input bit.
+
+The FSM outputs a high signal when the sequence `1011` has been detected.
+
+---
+
+## Module Details
+
+### `fsm_2_always`
+
+- **Inputs:**
+  - `clk`: Clock input.
+  - `rst`: Asynchronous active-high reset.
+  - `in_bit`: Serial input bit stream.
+- **Output:**
+  - `out`: High when the sequence `1011` is detected.
+
+The FSM uses four parameters for states: `S0`, `S1`, `S2`, `S3`, encoded as 2-bit constants.
+
+---
+
+## Testbench `tb_fsm_2_always`
+
+- Drives clock, reset, and input bit sequences.
+- Contains simulation stimulus to verify detection of sequence `1011`.
+- Includes waveform dumping commands for VCD generation.
+
+---
+
+## Simulation
+
+### Tools used:
+
+- [Icarus Verilog](http://iverilog.icarus.com/) for compilation and execution.
+- [GTKWave](http://gtkwave.sourceforge.net/) for waveform viewing.
+
+### Compilation and Simulation Commands:
+
+```
+# Compile Verilog source files (testbench and FSM module)
+iverilog -o output_file.vvp tb_fsm_2_always.v fsm_2_always.v
+
+# Run the simulation
+vvp output_file.vvp
+```
+
+### Viewing Waveforms:
+
+The simulation generates a waveform file `fsm_waveform.vcd`. Open it with GTKWave:
+
+```
+gtkwave fsm_waveform.vcd
+```
+
+Make sure the testbench has the following lines enabled to generate the waveform file:
+
+```
+initial begin
+    $dumpfile("fsm_waveform.vcd");
+    $dumpvars(0, tb_fsm_2_always);
+end
+```
+
+---
+
+## Notes
+
+- Uncomment the clock generation loop inside the testbench to enable the clock signal during simulation.
+- The reset is active-high and asynchronous.
+- The output logic uses the current state and input bit to assert detection.
+- The code is structured for clear separation of sequential and combinational logic.
+
+---
+
+## License
+
+This code is provided as-is for learning and demonstration purposes.
+
+---
+
+## Contact
+
+For any issues or questions, please create an issue on the GitHub repository.
+
+```
