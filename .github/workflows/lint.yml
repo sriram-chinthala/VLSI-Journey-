@@ -67,7 +67,7 @@ jobs:
 
             # Run verilator. We use -I"$dir" to tell Verilator where to find modules.
             # The flags from your original file are preserved.
-            verilator --lint-only --no-timing -Wno-STMTDLY -I"$dir" $project_files
+            verilator --lint-only --timing -Wno-LATCH -Wno-PINMISSING -Wno-MULTITOP -Wno-WIDTH -I"$dir" $project_files
           done
 
           

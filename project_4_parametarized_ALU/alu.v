@@ -42,7 +42,7 @@ module alu #(
             2'b00: result = arith_result;
             2'b01: result = logic_result;
             2'b10: result = shift_result;
-            default: result = 32'b0;
+            default: result = {DATA_WIDTH{1'b0}}; // Default case
         endcase
     end
 endmodule
