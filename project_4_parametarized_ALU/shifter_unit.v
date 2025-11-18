@@ -1,8 +1,9 @@
 module shifter #(
-    parameter DATA_WIDTH = 8
+    parameter DATA_WIDTH = 8,
+    parameter SHIFT_AMOUNT_WIDTH = $clog2(DATA_WIDTH)
 ) (
-    input [DATA_WIDTH-1:0] data,
-    input [2:0] shift_amount,
+    input signed [DATA_WIDTH-1:0] data,
+    input [SHIFT_AMOUNT_WIDTH-1:0] shift_amount,
     input [1:0] shift_op,
     output reg [DATA_WIDTH-1:0] result
 );
