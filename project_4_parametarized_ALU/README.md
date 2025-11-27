@@ -14,32 +14,32 @@ A modular, parameterized Arithmetic Logic Unit supporting arithmetic, logic, and
 
 ## 📂 Project Structure
 
-project_4_parametarized_ALU/
-│
-├── RTL/
-│ ├── alu.v
-│ ├── arithmetic_unit.v
-│ ├── logic_unit.v
-│ └── shifter_unit.v
-│
-├── testbench/
-│ ├── tb_alu.v
-│ ├── tb_arithmetic_unit.v
-│ ├── tb_logic_unit.v
-│ └── tb_shifter_unit.v
-│
-├── docs/
-│ └── specification.md
-│
-├── output/
-│ ├── output_alu.vvp
-│ ├── output_arithmetic.vvp
-│ ├── output_logic.vvp
-│ └── output_shifter_unit.vvp
-│
-└── sim_wave/
-├── tb_alu.vcd
-└── tb_alu_8.vcd
+		project_4_parametarized_ALU/
+		│
+		├── RTL/
+		│ ├── alu.v
+		│ ├── arithmetic_unit.v
+		│ ├── logic_unit.v
+		│ └── shifter_unit.v
+		│
+		├── testbench/
+		│ ├── tb_alu.v
+		│ ├── tb_arithmetic_unit.v
+		│ ├── tb_logic_unit.v
+		│ └── tb_shifter_unit.v
+		│
+		├── docs/
+		│ └── specification.md
+		│
+		├── output/
+		│ ├── output_alu.vvp
+		│ ├── output_arithmetic.vvp
+		│ ├── output_logic.vvp
+		│ └── output_shifter_unit.vvp
+		│
+		└── sim_wave/
+		├── tb_alu.vcd
+		└── tb_alu_8.vcd
 
 ## 🧩 Opcode Encoding
 
