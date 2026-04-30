@@ -1,0 +1,141 @@
+$date
+	Thu Oct 23 16:59:15 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_fsm_2_always $end
+$var wire 1 ! out $end
+$var reg 1 " clk $end
+$var reg 1 # in_bit $end
+$var reg 1 $ rst $end
+$scope module DUT $end
+$var wire 1 " clk $end
+$var wire 1 # in_bit $end
+$var wire 1 $ rst $end
+$var parameter 2 % S0 $end
+$var parameter 2 & S1 $end
+$var parameter 2 ' S2 $end
+$var parameter 2 ( S3 $end
+$var reg 1 ! out $end
+$var reg 2 ) state [1:0] $end
+$scope begin output_logic $end
+$upscope $end
+$scope begin state_transition $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b11 (
+b10 '
+b1 &
+b0 %
+$end
+#0
+$dumpvars
+b0 )
+0$
+0#
+0"
+0!
+$end
+#5
+1$
+1"
+#10
+0"
+#15
+1"
+0$
+#20
+0"
+#25
+b1 )
+1"
+1#
+#30
+0"
+#35
+b10 )
+1"
+0#
+#40
+0"
+#45
+b11 )
+1"
+1#
+#50
+0"
+#55
+b1 )
+1!
+1"
+#60
+0"
+#65
+b10 )
+0!
+1"
+0#
+#70
+0"
+#75
+b11 )
+1"
+1#
+#80
+0"
+#85
+b1 )
+1"
+0#
+#90
+0"
+#95
+1"
+1#
+#100
+0"
+#105
+1"
+#110
+0"
+#115
+b10 )
+1"
+0#
+#120
+0"
+#125
+b0 )
+1"
+1$
+#130
+0"
+#135
+1"
+0$
+#140
+0"
+#145
+b1 )
+1"
+1#
+#150
+0"
+#155
+1"
+#160
+0"
+#165
+1"
+#170
+0"
+#175
+1"
