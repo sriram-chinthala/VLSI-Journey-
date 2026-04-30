@@ -1,0 +1,181 @@
+$date
+	Mon Apr  6 23:07:51 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_apb_master_simple $end
+$var wire 1 ! pwrite $end
+$var wire 32 " pwdata [31:0] $end
+$var wire 1 # pselx $end
+$var wire 1 $ penable $end
+$var wire 32 % paddr [31:0] $end
+$var reg 32 & addr [31:0] $end
+$var reg 1 ' clk $end
+$var reg 1 ( pready $end
+$var reg 1 ) reset_n $end
+$var reg 1 * transfer $end
+$var reg 32 + wdata [31:0] $end
+$var reg 1 , write $end
+$scope module uut $end
+$var wire 32 - addr [31:0] $end
+$var wire 1 ' clk $end
+$var wire 1 ( pready $end
+$var wire 1 ) reset_n $end
+$var wire 1 * transfer $end
+$var wire 32 . wdata [31:0] $end
+$var wire 1 , write $end
+$var parameter 2 / access $end
+$var parameter 2 0 idle $end
+$var parameter 2 1 setup $end
+$var reg 2 2 current_state [1:0] $end
+$var reg 2 3 next_state [1:0] $end
+$var reg 32 4 paddr [31:0] $end
+$var reg 1 $ penable $end
+$var reg 1 # pselx $end
+$var reg 32 5 pwdata [31:0] $end
+$var reg 1 ! pwrite $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1 1
+b0 0
+b10 /
+$end
+#0
+$dumpvars
+b0 5
+b0 4
+b0 3
+b0 2
+b0 .
+b0 -
+0,
+b0 +
+0*
+0)
+0(
+0'
+b0 &
+b0 %
+0$
+0#
+b0 "
+0!
+$end
+#5000
+1'
+#10000
+0'
+#15000
+b1 3
+b11011110101011011011111011101111 +
+b11011110101011011011111011101111 .
+b10100000000000000001000100010001 &
+b10100000000000000001000100010001 -
+1,
+1*
+1'
+1)
+#20000
+0'
+#25000
+1!
+b11011110101011011011111011101111 "
+b11011110101011011011111011101111 5
+b10100000000000000001000100010001 %
+b10100000000000000001000100010001 4
+1#
+b1 2
+b10 3
+0*
+1'
+#30000
+0'
+#35000
+b0 3
+b10 2
+1$
+1(
+1'
+#40000
+0'
+#45000
+0$
+0#
+b0 2
+b0 3
+0(
+1'
+#50000
+0'
+#55000
+1'
+#60000
+0'
+#65000
+1'
+#70000
+0'
+#75000
+b1 3
+b10010001101000101011001111000 +
+b10010001101000101011001111000 .
+b10110000000000000010001000100010 &
+b10110000000000000010001000100010 -
+1*
+1'
+#80000
+0'
+#85000
+b10010001101000101011001111000 "
+b10010001101000101011001111000 5
+b10110000000000000010001000100010 %
+b10110000000000000010001000100010 4
+1#
+b1 2
+b10 3
+0*
+1'
+#90000
+0'
+#95000
+b10 2
+1$
+1'
+#100000
+0'
+#105000
+b0 3
+1(
+1'
+#110000
+0'
+#115000
+b0 2
+0$
+0#
+b0 3
+0(
+1'
+#120000
+0'
+#125000
+1'
+#130000
+0'
+#135000
+1'
+#140000
+0'
+#145000
+1'
+#150000
+0'
+#155000
+1'

@@ -1,0 +1,41 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x58fea7bc3510 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x58fea7bc36a0 .scope module, "enum_ex" "enum_ex" 3 1;
+ .timescale 0 0;
+enum0x58fea7be8130 .enum4 (2)
+   "IDLE" 2'b01,
+   "RUN" 2'b10,
+   "STOP" 2'b00
+ ;
+v0x58fea7bc3830_0 .var "next_state", 1 0;
+v0x58fea7c1d8a0_0 .var "state", 1 0;
+    .scope S_0x58fea7bc36a0;
+T_0 ;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x58fea7c1d8a0_0, 0, 2;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x58fea7bc3830_0, 0, 2;
+    %vpi_call/w 3 8 "$display", "the first value in the enum is %d", 2'b01 {0 0 0};
+    %vpi_call/w 3 9 "$display", "the last value in the enum is %d", 2'b00 {0 0 0};
+    %vpi_func/s 3 10 "$ivl_enum_method$name", enum0x58fea7be8130, v0x58fea7c1d8a0_0 {0 0 0};
+    %vpi_call/w 3 10 "$display", "the current value in the enum is %s", S<0,str> {0 0 1};
+    %vpi_func/s 3 11 "$ivl_enum_method$name", enum0x58fea7be8130, v0x58fea7bc3830_0 {0 0 0};
+    %vpi_call/w 3 11 "$display", "the current value in the next_state enum is %s", S<0,str> {0 0 1};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "enum_example.sv";

@@ -1,0 +1,180 @@
+$date
+	Fri Feb  6 10:05:07 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_apb_protocol $end
+$var wire 32 ! t_pwrite_data [31:0] $end
+$var wire 1 " t_pwrite $end
+$var wire 1 # t_psel $end
+$var wire 1 $ t_pready $end
+$var wire 32 % t_pread_data [31:0] $end
+$var wire 1 & t_penable $end
+$var wire 32 ' t_paddr [31:0] $end
+$var reg 1 ( t_clk $end
+$var reg 1 ) t_op_value $end
+$var reg 1 * t_rst_n $end
+$var reg 1 + t_tx_start $end
+$scope module master $end
+$var wire 1 ( clk $end
+$var wire 1 ) op_value $end
+$var wire 1 * rst_n $end
+$var wire 1 + tx_start $end
+$var wire 1 $ pready $end
+$var wire 32 , pread_data [31:0] $end
+$var reg 2 - current_state [1:0] $end
+$var reg 2 . next_state [1:0] $end
+$var reg 32 / paddr [31:0] $end
+$var reg 1 & penable $end
+$var reg 1 # psel $end
+$var reg 1 " pwrite $end
+$var reg 32 0 pwrite_data [31:0] $end
+$var reg 32 1 read_data_reg [31:0] $end
+$upscope $end
+$scope module slave $end
+$var wire 1 ( clk $end
+$var wire 32 2 paddr [31:0] $end
+$var wire 1 & penable $end
+$var wire 1 # psel $end
+$var wire 1 " pwrite $end
+$var wire 32 3 pwrite_data [31:0] $end
+$var wire 1 * rst_n $end
+$var reg 32 4 pread_data [31:0] $end
+$var reg 1 $ pready $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+b0 .
+bx -
+bx ,
+0+
+0*
+0)
+0(
+bx '
+x&
+bx %
+x$
+x#
+x"
+bx !
+$end
+#5
+b0 -
+b0 '
+b0 /
+b0 2
+b0 1
+b1 !
+b1 0
+b1 3
+0"
+0&
+0#
+b0 %
+b0 ,
+b0 4
+1$
+1(
+#10
+0(
+#15
+1*
+1(
+#20
+0(
+#25
+b0 !
+b0 0
+b0 3
+1)
+1(
+#30
+0(
+#35
+b1 .
+1+
+1(
+#40
+0(
+#45
+b1 -
+b10 .
+0+
+1(
+#50
+0(
+#55
+b11011110101011011011111011101111 !
+b11011110101011011011111011101111 0
+b11011110101011011011111011101111 3
+b11111111 '
+b11111111 /
+b11111111 2
+1"
+1#
+b10 -
+b1 .
+1+
+1(
+#60
+0(
+#65
+b1 -
+1&
+b10 .
+0)
+0+
+1(
+#70
+0(
+#75
+b0 .
+0"
+0&
+b10 -
+1(
+#80
+0(
+#85
+b0 -
+1&
+1(
+#90
+0(
+#95
+b11011110101011011011111011101111 %
+b11011110101011011011111011101111 ,
+b11011110101011011011111011101111 4
+0#
+b0 !
+b0 0
+b0 3
+b0 '
+b0 /
+b0 2
+0&
+1(
+#100
+0(
+#105
+1(
+#110
+0(
+#115
+1(

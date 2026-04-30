@@ -1,0 +1,183 @@
+$date
+	Mon Apr  6 23:37:25 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_apb_master $end
+$var wire 32 ! req_rdata [31:0] $end
+$var wire 1 " req_done $end
+$var wire 1 # PWRITE $end
+$var wire 32 $ PWDATA [31:0] $end
+$var wire 1 % PSEL $end
+$var wire 1 & PENABLE $end
+$var wire 32 ' PADDR [31:0] $end
+$var reg 1 ( PCLK $end
+$var reg 32 ) PRDATA [31:0] $end
+$var reg 1 * PREADY $end
+$var reg 1 + PRESETn $end
+$var reg 1 , PSLVERR $end
+$var reg 32 - req_addr [31:0] $end
+$var reg 32 . req_data [31:0] $end
+$var reg 1 / req_start $end
+$var reg 1 0 req_write $end
+$scope module uut $end
+$var wire 1 ( PCLK $end
+$var wire 32 1 PRDATA [31:0] $end
+$var wire 1 * PREADY $end
+$var wire 1 + PRESETn $end
+$var wire 1 , PSLVERR $end
+$var wire 32 2 req_addr [31:0] $end
+$var wire 32 3 req_data [31:0] $end
+$var wire 1 / req_start $end
+$var wire 1 0 req_write $end
+$var parameter 2 4 ACCESS $end
+$var parameter 2 5 IDLE $end
+$var parameter 2 6 SETUP $end
+$var reg 32 7 PADDR [31:0] $end
+$var reg 1 & PENABLE $end
+$var reg 1 % PSEL $end
+$var reg 32 8 PWDATA [31:0] $end
+$var reg 1 # PWRITE $end
+$var reg 2 9 current_state [1:0] $end
+$var reg 2 : next_state [1:0] $end
+$var reg 1 " req_done $end
+$var reg 32 ; req_rdata [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1 6
+b0 5
+b10 4
+$end
+#0
+$dumpvars
+b0 ;
+b0 :
+b0 9
+b0 8
+b0 7
+b0 3
+b0 2
+b0 1
+00
+0/
+b0 .
+b0 -
+0,
+0+
+0*
+b0 )
+0(
+b0 '
+0&
+0%
+b0 $
+0#
+0"
+b0 !
+$end
+#5000
+1(
+#10000
+0(
+#15000
+b1 :
+b11011110101011011011111011101111 .
+b11011110101011011011111011101111 3
+b10101010101010101011101110111011 -
+b10101010101010101011101110111011 2
+10
+1/
+1(
+1+
+#20000
+0(
+#25000
+b11011110101011011011111011101111 $
+b11011110101011011011111011101111 8
+b10101010101010101011101110111011 '
+b10101010101010101011101110111011 7
+1#
+1%
+b1 9
+b10 :
+0/
+1(
+#30000
+0(
+#35000
+1&
+b10 9
+b0 :
+1*
+1(
+#40000
+0(
+#45000
+0&
+0%
+b0 9
+b0 :
+0*
+1(
+#50000
+0(
+#55000
+1(
+#60000
+0(
+#65000
+b1 :
+b10001000100010010001000100010 -
+b10001000100010010001000100010 2
+00
+1/
+1(
+#70000
+0(
+#75000
+b10001000100010010001000100010 '
+b10001000100010010001000100010 7
+0#
+1%
+b1 9
+b10 :
+0/
+1(
+#80000
+0(
+#85000
+1&
+b10 9
+b0 :
+b11001010111111101111000000001101 )
+b11001010111111101111000000001101 1
+1*
+1(
+#90000
+0(
+#95000
+0&
+0%
+b0 9
+b0 :
+0*
+1(
+#100000
+0(
+#105000
+1(
+#110000
+0(
+#115000
+1(
+#120000
+0(
+#125000
+1(
